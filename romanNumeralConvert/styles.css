@@ -1,183 +1,128 @@
 :root {
-    --color-white: #f3f3f3;
-    --color-darkblue: #1b1b32;
-    --color-darkblue-alpha: rgba(27, 27, 50, 0.5);
-    --color-green: #37af65;
-  }
-
-*,
-*::before,
-*::after {
-box-sizing: border-box;
-}
-  
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    color: var(--color-white);
-    font-size: 1rem;
-    font-weight: 1.4;
-    display: block;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--color-darkblue);
-    background-image: linear-gradient(115deg, rgba(58, 58, 158, 0.8), 
-    rgba(136, 136, 206, 0.7)), url(515309-peace-bridge.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: -1;}
-
-
-div {
-    display: block;
-    unicode-bidi: isolate;
-}
-
-header {
-    display: block;
-    padding: 2rem 0 1rem 0;
-    unicode-bidi: isolate;
-}
-
-form {
-    background: var(--color-darkblue-alpha);
-    padding: 2.5rem 2.5rem;
-    border-radius: 0.25rem;
-  }
-
-label {
-    display: flex;
-    align-items: center;
-    font-size: 1.125rem;
-    margin-bottom: 0.5rem;
-    cursor: default;
-}
-
-
-input, button, select, textarea {
-    margin: 0;
-    font-family: inherit;
-    color: inherit;
-    border-radius: 2px;
-    cursor: pointer;
-}
-
-h1 {
-    font-weight: 400;
-    line-height: 1.2;
+    --gray-00: #ffffff;
+    --gray-05: #f5f6f7;
+    --gray-15: #d0d0d5;
+    --gray-75: #3b3b4f;
+    --gray-85: #1b1b32;
+    --gray-90: #0a0a23;
+    --blue-50: #198eee;
+    --error: #a94442;
+    --danger-color: #850000;
+    --danger-background: #ffadad;
   }
   
-p {
-    font-size: 1.125rem;
-  }
-
-h1, p {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-}
-
-p {
-    font-size: 1.125rem;
-}
-
-span {
-    font-size: 0.9rem;
-}
-/* class */
-
-.text-center {
-    text-align: center;
-}
-
-.description {
-    font-style: italic;
-    font-weight: 200;
-    text-shadow: 1px 1px 1px rbga(0, 0, 0, 0.1);
-}
-
-.container {
-    max-width: 720px;
-    width: 100%;
-    margin: 0 auto;
-    /* padding: 1rem; */
+  *,
+  ::before,
+  ::after {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
-
-}
-
-
-.form-group {
-    margin: 0 auto 1.25rem auto;
-}
-
-.input-radio, .input-checkbox {
-    display: inline-block;
+  }
+  
+  body {
+    min-height: 100vh;
+    padding: 50px 20px;
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    background-color: var(--gray-85);
+    color: var(--gray-05);
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-right: 0.5rem;
-    /* font-size: 1.25rem; */
-    transform: scale(1.25);
-    margin-bottom: 0.25rem;
-    margin-top: 0.1rem;
-}
-
-.form-control {
+    justify-content: center;
+  }
+  
+  .freecodecamp-logo {
+    height: 30px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 350px;
+    font-family: 'Castoro Titling', cursive;
+  }
+  
+  form {
+    color: var(--gray-05);
+    margin: auto 25px;
+    padding: 15px auto;
+    border: 3px solid var(--gray-05);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    background-color: var(--gray-75);
+  }
+  
+  fieldset {
+    border: 0 none;
+    height: 100%;
+    padding: 25px;
+    margin: 10px 20px;
+  }
+  
+  label {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  input:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--blue-50);
+  }
+  
+  input {
     display: block;
-    font-size: 1rem;
+    font-size: 2.5rem;
     width: 100%;
-    height: 2.375rem;
-    padding: 0.375rem 0.75rem;
-    color: #495047;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-
-}
-
-.input-textarea {
-    min-height: 120px;
-    width: 100%;
-    padding: 0.625rem;
-    resize: vertical;
-    font-size: 1rem;
-}
-
-.submit-button {
-    display:block;
-    width: 100%;
-    padding: 0.75rem;
-    background-color: var(--color-green);
-    color: var(--color-white);
-    border-radius: 0.4rem;
-    border: none;
+    height: 60px;
+    padding: 6px 12px;
+    margin: 10px 0;
+    line-height: 1.4;
+    color: white;
+    background-color: var(--gray-90);
+    border: 1px solid var(--gray-05);
+  }
+  
+  button {
     cursor: pointer;
-    font-size: 1.125rem;
-    }
-
-.submit-button:hover {
-    background-color: #e9bf05;
-}
-
-input[type="checkbox" i] {
-    background-color: initial;
-    cursor: default;
-    appearance: auto;
-    padding: initial;
-    border: initial;
-}
-
-
-#all-apply, #optional {
-    margin-left: 5px; /* Adjust the value as needed */
-    color: inherit; /* Optional: change the color of the optional text */
-    font-size: 0.9em; /* Optional: change the font size of the optional text */
-}
+    margin-top: 15px;
+    text-decoration: none;
+    background-image: linear-gradient(#fecc4c, #ffac33);
+    border: 3px solid #feac32;
+    padding: 10px 16px;
+    font-size: 23px;
+    width: 100%;
+  }
+  
+  .output {
+    color: white;
+    background-color: var(--gray-75);
+    border: 3px solid var(--gray-05);
+    font-size: 2.5rem;
+    width: 90%;
+    max-width: 500px;
+    min-height: 55px;
+    margin-top: 25px;
+    padding: 15px;
+    overflow-wrap: break-word;
+    text-align: center;
+  }
+  
+  .alert {
+    font-size: 2rem;
+    background-color: var(--danger-background);
+    border: 3px solid var(--danger-color);
+    color: var(--danger-color);
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
