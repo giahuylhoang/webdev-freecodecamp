@@ -50,9 +50,6 @@ const returnError = () => {
     outputDiv.textContent = 'Please enter a valid number';
 }
 
-
-
-
 convertButton.addEventListener('click', () => {
     if (numberInput.value === "" || isNaN(numberInput.value)) {
         returnError();
@@ -60,13 +57,21 @@ convertButton.addEventListener('click', () => {
     } else {
         const number = parseInt(numberInput.value);
         if (number < 1 || number > 3999) {
-            returnError();
-            return;
-        }
 
+            outputDiv.classList.remove('hidden');
+            outputDiv.classList.add('alert');
+            outputDiv.textContent = 'Please enter a number less than or equal to 3999.';
+            
+            return;
+        } else {
         const romanNumeral = convertToRoman(number);
+
+        outputDiv.classList.remove('alert');
         outputDiv.classList.remove('hidden');
         outputDiv.textContent = romanNumeral;
+        
+        return;
+    }
     }
 });
 
