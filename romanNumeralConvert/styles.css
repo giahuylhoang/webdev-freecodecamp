@@ -114,13 +114,6 @@
     overflow-wrap: break-word;
     text-align: center;
   }
-
-  /* .error {
-    border: 3px solid var(--erorr);
-    color: var(--danger-color);
-    background-color: var(--danger-background);
-
-  } */
   
   .alert {
     font-size: 2rem;
